@@ -10,6 +10,8 @@ msg.text = document.querySelector('[name="text"]').value;
     voices = this.getVoices();
     // console.log(voices);
     voicesDropdown.innerHTML = voices
+    // limit/filter to english languages below
+    //.filter(voice => voice.lang.includes("en"))
     .map(voice => `<option value="${voice.name}">${voice.name} ($voice.lang)</option>`)
     .join("");
     }
