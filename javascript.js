@@ -8,7 +8,11 @@ msg.text = document.querySelector('[name="text"]').value;
 
   function populateVoices() {
     voices = this.getVoices();
-    console.log(voices);
+    // console.log(voices);
+    const voiceOptions = voices
+    .map(voice => `<option value="${voice.name}">${voice.name} ($voice.lang)</option>`)
+    .join("");
+    voicesDropdown.innerHTML = voiceOptions;
   }
 
   speechSynthesis.addEventListener("voiceschanged", populateVoices);
