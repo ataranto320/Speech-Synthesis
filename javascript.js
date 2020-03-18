@@ -21,9 +21,11 @@ msg.text = document.querySelector('[name="text"]').value;
         toggle();
     }
 
-    function toggle() {
+    function toggle(startOver = true) {
       speechSynthesis.cancel();
-      speechSynthesis.speak(msg);
+      if (startOver) {
+        speechSynthesis.speak(msg);
+      }
     }
 
   speechSynthesis.addEventListener("voiceschanged", populateVoices);
