@@ -14,4 +14,10 @@ msg.text = document.querySelector('[name="text"]').value;
     .join("");
     }
 
+    function setVoice() {
+        // console.log("Changing voice");
+        console.log(this.value);
+    }
+
   speechSynthesis.addEventListener("voiceschanged", populateVoices);
+  voicesDropdown.addEventListener("change", setVoice);
