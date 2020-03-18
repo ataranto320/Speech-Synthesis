@@ -16,7 +16,8 @@ msg.text = document.querySelector('[name="text"]').value;
 
     function setVoice() {
         // console.log("Changing voice");
-        console.log(this.value);
+        // console.log(this.value);
+        msg.voice = voices.find(voice => voice.name === this.value);
     }
 
   speechSynthesis.addEventListener("voiceschanged", populateVoices);
