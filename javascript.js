@@ -39,3 +39,5 @@ msg.text = document.querySelector('[name="text"]').value;
   options.forEach(option => option.addEventListener("change", setOption));
   speakButton.addEventListener("click", toggle);
   stopButton.addEventListener("click", toggle.bind(null, false));
+  // or stopButton.addEventListener("click", () => toggle(false));
+  // downside to above: creating another function
