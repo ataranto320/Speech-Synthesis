@@ -18,6 +18,12 @@ msg.text = document.querySelector('[name="text"]').value;
         // console.log("Changing voice");
         // console.log(this.value);
         msg.voice = voices.find(voice => voice.name === this.value);
+        toggle();
+    }
+
+    function toggle() {
+      speechSynthesis.cancel();
+      speechSynthesis.speak(msg);
     }
 
   speechSynthesis.addEventListener("voiceschanged", populateVoices);
