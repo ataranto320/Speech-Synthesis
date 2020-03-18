@@ -38,6 +38,4 @@ msg.text = document.querySelector('[name="text"]').value;
   voicesDropdown.addEventListener("change", setVoice);
   options.forEach(option => option.addEventListener("change", setOption));
   speakButton.addEventListener("click", toggle);
-  stopButton.addEventListener("click", function() {
-    toggle(false)
-  });
+  stopButton.addEventListener("click", toggle.bind(null, false));
